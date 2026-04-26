@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Stratford Concepts</title>
+    <style>
+      :root {
+        --ink: #1d1a18;
+        --paper: #f6f2ea;
+        --accent: #b24c2a;
+        --line: #d9cfbf;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 18%, #fff8ed 0%, #f6f2ea 32%, transparent 60%),
+          radial-gradient(circle at 88% 82%, #efe5d2 0%, #f6f2ea 25%, transparent 55%),
+          var(--paper);
+        display: grid;
+        place-items: center;
+        padding: 2.5rem 1rem;
+      }
+
+      .shell {
+        width: min(920px, 100%);
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(6px);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(1.25rem, 3vw, 2.25rem);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
+        letter-spacing: 0.02em;
+      }
+
+      p {
+        margin: 0.75rem 0 0;
+        max-width: 65ch;
+        line-height: 1.6;
+      }
+
+      .grid {
+        margin-top: 1.6rem;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        background: #fffdfa;
+        transition: transform 180ms ease, border-color 180ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.06rem;
+      }
+
+      .card p {
+        margin-top: 0.35rem;
+        font-size: 0.95rem;
+        color: #433d37;
+      }
+
+      .note {
+        margin-top: 1.2rem;
+        font-size: 0.9rem;
+        color: #5b544d;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <h1>Studio Stratford Full-Site Concepts</h1>
+      <p>
+        Three homepage directions for a complete website, each with different art direction,
+        structure, and conversion style. Use these to discuss the final visual and strategic lane.
+      </p>
+
+      <section class="grid" aria-label="Concept links">
+        <a class="card" href="./option-1-editorial.html">
+          <h2>Option 1 - Editorial Calm</h2>
+          <p>Elegant boutique consultancy style with clear nav, process, and inquiry conversion.</p>
+        </a>
+
+        <a class="card" href="./option-2-atelier.html">
+          <h2>Option 2 - Atelier Warmth</h2>
+          <p>Warm high-touch storytelling with services, proof, and a premium engagement flow.</p>
+        </a>
+
+        <a class="card" href="./option-3-systems.html">
+          <h2>Option 3 - Structured Clarity</h2>
+          <p>Strategic and modern system with strong hierarchy and scalable site architecture.</p>
+        </a>
+      </section>
+
+      <p class="note">Tip: present these as complete homepages for a future multi-page build.</p>
+    </main>
+  </body>
+</html>

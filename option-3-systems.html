@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Stratford - Option 3 Structured Clarity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #eef1ea;
+        --panel: #f8fbf4;
+        --ink: #1b2420;
+        --muted: #42514a;
+        --signal: #0f6c52;
+        --line: #bfd1c6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "IBM Plex Sans", sans-serif;
+        background:
+          linear-gradient(135deg, rgba(15, 108, 82, 0.12), rgba(15, 108, 82, 0) 35%),
+          linear-gradient(0deg, #e8eee6, #eef1ea);
+      }
+
+      .outer {
+        width: min(1200px, 100% - 1.6rem);
+        margin: 0 auto;
+        padding: clamp(1rem, 3vw, 2rem) 0 2rem;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.9rem;
+      }
+
+      .wordmark {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 0.35rem 0.68rem;
+        font-size: 0.84rem;
+      }
+
+      .menu a:hover {
+        border-color: var(--line);
+      }
+
+      .hero {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .brand,
+      .detail,
+      .block {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+      }
+
+      .brand {
+        padding: clamp(1rem, 3vw, 2rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .brand::after {
+        content: "";
+        position: absolute;
+        right: -18px;
+        top: -18px;
+        width: 160px;
+        height: 160px;
+        border: 1px dashed rgba(15, 108, 82, 0.38);
+        border-radius: 999px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--signal);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      h1 {
+        margin-top: 0.6rem;
+        font-size: clamp(2.05rem, 6.2vw, 4.4rem);
+        line-height: 0.95;
+      }
+
+      .lead {
+        margin-top: 0.8rem;
+        max-width: 56ch;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .actions {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.52rem 0.85rem;
+        font-size: 0.85rem;
+        border: 1px solid var(--line);
+      }
+
+      .btn.primary {
+        color: #fff;
+        background: var(--signal);
+        border-color: var(--signal);
+      }
+
+      .btn.secondary {
+        color: var(--ink);
+        background: #fff;
+      }
+
+      .detail {
+        padding: 1rem;
+      }
+
+      .portrait {
+        height: 150px;
+        border: 1px dashed var(--line);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #5f7469;
+        background: #f2f8f2;
+      }
+
+      .detail p {
+        margin: 0.7rem 0 0;
+        color: var(--muted);
+        line-height: 1.58;
+      }
+
+      .grid {
+        margin-top: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      .block {
+        padding: 1rem;
+        animation: showup 480ms ease both;
+      }
+
+      .block:nth-child(1) {
+        grid-column: span 6;
+      }
+
+      .block:nth-child(2) {
+        grid-column: span 6;
+        animation-delay: 120ms;
+      }
+
+      .block:nth-child(3) {
+        grid-column: span 12;
+        animation-delay: 240ms;
+      }
+
+      h2 {
+        font-size: clamp(1.45rem, 3vw, 2.2rem);
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-top: 0.85rem;
+      }
+
+      p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .offerline,
+      .timeline {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .offerline:first-of-type,
+      .timeline:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .offerline strong,
+      .timeline strong {
+        color: #1f2b26;
+      }
+
+      a {
+        color: #0b6a50;
+      }
+
+      @keyframes showup {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 930px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .block:nth-child(1),
+        .block:nth-child(2),
+        .block:nth-child(3) {
+          grid-column: span 12;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="outer">
+      <header class="top">
+        <div class="wordmark">Studio Stratford</div>
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#method">Method</a>
+          <a href="#proof">Proof</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <article class="brand">
+          <p class="eyebrow">Studio Stratford</p>
+          <h1>A strategic site for thoughtful, high-value client work</h1>
+          <p class="lead">
+            Studio Stratford is a premium advisory practice with clear pathways from first inquiry
+            to successful outcomes. Engagements are practical, rigorous, and tailored to the needs
+            of each individual, team, or project.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Schedule consultation</a>
+            <a class="btn secondary" href="#services">Browse services</a>
+          </div>
+        </article>
+
+        <aside class="detail" id="proof">
+          <div class="portrait" role="img" aria-label="Portrait placeholder area">Elaine Stratford portrait</div>
+          <p>
+            Ideal for a consultancy-led brand voice: precise, modern, and grounded.
+            Room for testimonials, affiliations, and selected project outcomes.
+          </p>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <article class="block" id="services">
+          <h2>Service pillars</h2>
+          <p class="offerline"><strong>Research</strong> - literature reviews, qualitative analysis, archival research, policy reviews.</p>
+          <p class="offerline"><strong>Writing</strong> - developmental support for essays, reports, proposals, and long-form works.</p>
+          <p class="offerline"><strong>Editing</strong> - precision editing that strengthens clarity, coherence, and impact.</p>
+          <p class="offerline"><strong>Coaching</strong> - health and wellbeing, career, and life cycle transitions, supported by credentialing and insurance.</p>
+        </article>
+
+        <article class="block" id="method">
+          <h2>Method and fit</h2>
+          <p>
+            Elaine works with academics, professionals, and teams who need intellectual rigor
+            and practical movement. Engagements are scoped around outcomes, milestones, and useful momentum.
+          </p>
+          <p class="timeline"><strong>01 Discovery:</strong> goals, context, and constraints.</p>
+          <p class="timeline"><strong>02 Delivery:</strong> focused collaboration and editorial depth.</p>
+          <p class="timeline"><strong>03 Integration:</strong> decisions, outputs, and next steps.</p>
+        </article>
+
+        <article class="block" id="contact">
+          <h2>Get in touch</h2>
+          <p>
+            If you are ready for thoughtful, high-standard support with your research, writing,
+            editing, or coaching goals, make contact to discuss fit and next steps.
+          </p>
+          <p>Email: <a href="mailto:elainestratford@studiostratford.com">elainestratford@studiostratford.com</a></p>
+          <p>Phone: <a href="tel:+61409956384">+61 409 956 384</a></p>
+          <p>Based in Hobart, working globally with individuals, professionals, and teams.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
