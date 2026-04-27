@@ -45,6 +45,33 @@
         letter-spacing: 0.02em;
       }
 
+      .asset-strip {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .logo-preview {
+        width: 54px;
+        height: 54px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        object-fit: cover;
+        background: #fff;
+      }
+
+      .portrait-preview {
+        width: 100%;
+        max-width: 320px;
+        height: 74px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        object-fit: cover;
+        background: #fff;
+      }
+
       p {
         margin: 0.75rem 0 0;
         max-width: 65ch;
@@ -100,6 +127,10 @@
         Three homepage directions for a complete website, each with different art direction,
         structure, and conversion style. Use these to discuss the final visual and strategic lane.
       </p>
+      <div class="asset-strip" aria-label="Brand assets preview">
+        <img class="logo-preview" src="./logo.png" alt="Studio Stratford logo" />
+        <img class="portrait-preview" src="./portrait.jpg" alt="Portrait of Elaine Stratford" />
+      </div>
 
       <section class="grid" aria-label="Concept links">
         <a class="card" href="./option-1-editorial.html">

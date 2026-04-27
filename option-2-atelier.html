@@ -48,7 +48,9 @@
       }
 
       .logo {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 0.72rem;
         text-transform: uppercase;
         letter-spacing: 0.18em;
@@ -56,6 +58,14 @@
         border: 1px solid var(--line);
         border-radius: 999px;
         padding: 0.3rem 0.65rem;
+      }
+
+      .logo img {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        object-fit: cover;
       }
 
       .menu {
@@ -124,6 +134,22 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.55rem;
+      }
+
+      .hero-portrait {
+        margin-top: 1rem;
+        width: min(420px, 100%);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        background: #f7ebdb;
+      }
+
+      .hero-portrait img {
+        display: block;
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
       }
 
       .btn {
@@ -267,7 +293,10 @@
   <body>
     <main class="wrap">
       <header class="top">
-        <span class="logo">Studio Stratford</span>
+        <span class="logo">
+          <img src="./logo.png" alt="Studio Stratford logo" />
+          <span>Studio Stratford</span>
+        </span>
         <nav class="menu" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#approach">Approach</a>
@@ -285,6 +314,9 @@
         <div class="actions">
           <a class="btn main" href="#contact">Request a consultation</a>
           <a class="btn alt" href="#services">View service packages</a>
+        </div>
+        <div class="hero-portrait">
+          <img src="./portrait.jpg" alt="Portrait of Elaine Stratford" />
         </div>
       </section>
 

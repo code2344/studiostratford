@@ -52,9 +52,20 @@
       }
 
       .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
         font-family: "Cormorant Garamond", serif;
         font-size: 1.25rem;
         letter-spacing: 0.03em;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 1px solid var(--line);
       }
 
       .menu {
@@ -142,18 +153,19 @@
       }
 
       .portrait {
+        overflow: hidden;
+        padding: 0;
         border: 1px solid var(--line);
         border-radius: 14px;
         min-height: 220px;
-        background:
-          linear-gradient(135deg, rgba(138, 79, 55, 0.25), rgba(138, 79, 55, 0.04)),
-          repeating-linear-gradient(-35deg, rgba(255, 255, 255, 0.35) 0 10px, transparent 10px 20px);
-        display: grid;
-        place-items: center;
-        color: #7d7064;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 0.76rem;
+        background: #f0e7dc;
+      }
+
+      .portrait img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .stack {
@@ -274,7 +286,10 @@
   <body>
     <main class="page">
       <header class="topbar">
-        <div class="brand">Studio Stratford</div>
+        <div class="brand">
+          <img class="brand-mark" src="./logo.png" alt="Studio Stratford logo" />
+          <span>Studio Stratford</span>
+        </div>
         <nav class="menu" aria-label="Primary navigation">
           <a href="#services">Services</a>
           <a href="#process">Process</a>
@@ -298,7 +313,9 @@
             <a class="btn secondary" href="#services">Explore services</a>
           </div>
         </div>
-        <div class="portrait" role="img" aria-label="Portrait placeholder">Elaine Stratford portrait</div>
+        <div class="portrait">
+          <img src="./portrait.jpg" alt="Portrait of Elaine Stratford" />
+        </div>
       </section>
 
       <section class="stack" id="services">
