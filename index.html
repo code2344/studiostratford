@@ -1,155 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Stratford Concepts</title>
-    <style>
-      :root {
-        --ink: #1d1a18;
-        --paper: #f6f2ea;
-        --accent: #b24c2a;
-        --line: #d9cfbf;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planned Maintenance</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: radial-gradient(circle at top right, #1e293b, #020617 70%);
+      color: #f8fafc;
+      text-align: center;
+    }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Avenir Next", "Segoe UI", sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 12% 18%, #fff8ed 0%, #f6f2ea 32%, transparent 60%),
-          radial-gradient(circle at 88% 82%, #efe5d2 0%, #f6f2ea 25%, transparent 55%),
-          var(--paper);
-        display: grid;
-        place-items: center;
-        padding: 2.5rem 1rem;
-      }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
 
-      .shell {
-        width: min(920px, 100%);
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(6px);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: clamp(1.25rem, 3vw, 2.25rem);
-      }
+    .container {
+      width: min(840px, 100%);
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
 
-      h1 {
-        margin: 0;
-        font-size: clamp(1.6rem, 5vw, 2.5rem);
-        letter-spacing: 0.02em;
-      }
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
 
-      .asset-strip {
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.8rem;
-        align-items: center;
-      }
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 0.8rem;
+    }
 
-      .logo-preview {
-        width: 54px;
-        height: 54px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        object-fit: cover;
-        background: #fff;
-      }
+    p {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: #cbd5e1;
+    }
 
-      .portrait-preview {
-        width: 100%;
-        max-width: 320px;
-        height: 74px;
-        border-radius: 12px;
-        border: 1px solid var(--line);
-        object-fit: cover;
-        background: #fff;
-      }
+    .subtle {
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
 
-      p {
-        margin: 0.75rem 0 0;
-        max-width: 65ch;
-        line-height: 1.6;
-      }
+    footer {
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.2);
+    }
 
-      .grid {
-        margin-top: 1.6rem;
-        display: grid;
-        gap: 0.9rem;
-      }
+    footer a {
+      color: #7dd3fc;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="container">
+      <span class="badge">Scheduled</span>
+      <h1>Scheduled maintenance in progress</h1>
+      <p>This downtime is planned while we roll out reliability updates.</p>
+      <p class="subtle">Expected completion time: 9/5/2026, 4:00PM. Thank you for understanding.</p>
+    </section>
+  </main>
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem 1.1rem;
-        background: #fffdfa;
-        transition: transform 180ms ease, border-color 180ms ease;
-      }
-
-      .card:hover {
-        transform: translateY(-2px);
-        border-color: var(--accent);
-      }
-
-      .card h2 {
-        margin: 0;
-        font-size: 1.06rem;
-      }
-
-      .card p {
-        margin-top: 0.35rem;
-        font-size: 0.95rem;
-        color: #433d37;
-      }
-
-      .note {
-        margin-top: 1.2rem;
-        font-size: 0.9rem;
-        color: #5b544d;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="shell">
-      <h1>Studio Stratford Full-Site Concepts</h1>
-      <p>
-        Three homepage directions for a complete website, each with different art direction,
-        structure, and conversion style. Use these to discuss the final visual and strategic lane.
-      </p>
-      <div class="asset-strip" aria-label="Brand assets preview">
-        <img class="logo-preview" src="./logo.png" alt="Studio Stratford logo" />
-        <img class="portrait-preview" src="./portrait.jpg" alt="Portrait of Elaine Stratford" />
-      </div>
-
-      <section class="grid" aria-label="Concept links">
-        <a class="card" href="./option-1-editorial.html">
-          <h2>Option 1 - Editorial Calm</h2>
-          <p>Elegant boutique consultancy style with clear nav, process, and inquiry conversion.</p>
-        </a>
-
-        <a class="card" href="./option-2-atelier.html">
-          <h2>Option 2 - Atelier Warmth</h2>
-          <p>Warm high-touch storytelling with services, proof, and a premium engagement flow.</p>
-        </a>
-
-        <a class="card" href="./option-3-systems.html">
-          <h2>Option 3 - Structured Clarity</h2>
-          <p>Strategic and modern system with strong hierarchy and scalable site architecture.</p>
-        </a>
-      </section>
-
-      <p class="note">Tip: present these as complete homepages for a future multi-page build.</p>
-    </main>
-  </body>
+  <footer>
+    © 2026 Studio Stratford | Site under development by <a href="https://scstudios.tech" target="_blank" rel="noopener">SuperCode Studios</a>
+  </footer>
+</body>
 </html>
