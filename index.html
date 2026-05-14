@@ -1,96 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planned Maintenance</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Stratford - Option 1 Editorial Calm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f3eb;
+        --ink: #26211d;
+        --muted: #5f5851;
+        --accent: #8a4f37;
+        --line: #d8cdbf;
+        --card: #fffdf8;
+      }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: radial-gradient(circle at top right, #1e293b, #020617 70%);
-      color: #f8fafc;
-      text-align: center;
-    }
+      * {
+        box-sizing: border-box;
+      }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background:
+          linear-gradient(115deg, rgba(138, 79, 55, 0.1) 0%, transparent 44%),
+          radial-gradient(circle at 90% 8%, #efe4d5 0%, transparent 45%),
+          var(--paper);
+      }
 
-    .container {
-      width: min(840px, 100%);
-      background: rgba(15, 23, 42, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
-      padding: 2rem;
-      backdrop-filter: blur(8px);
-    }
+      .page {
+        width: min(1140px, 100% - 2rem);
+        margin: 0 auto;
+        padding: clamp(1rem, 3vw, 2rem) 0 3rem;
+      }
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.45rem 0.55rem 0.45rem 1rem;
+      }
 
-    h1 {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin-bottom: 0.8rem;
-    }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        letter-spacing: 0.03em;
+      }
 
-    p {
-      font-size: clamp(1rem, 1.4vw, 1.15rem);
-      color: #cbd5e1;
-    }
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        object-fit: cover;
+        border: 1px solid var(--line);
+      }
 
-    .subtle {
-      margin-top: 0.7rem;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
 
-    footer {
-      width: 100%;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      background: rgba(0, 0, 0, 0.2);
-    }
+      .menu a {
+        text-decoration: none;
+        color: var(--ink);
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.85rem;
+      }
 
-    footer a {
-      color: #7dd3fc;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="container">
-      <span class="badge">Scheduled</span>
-      <h1>Scheduled maintenance in progress</h1>
-      <p>This downtime is planned while we roll out reliability updates.</p>
-      <p class="subtle">Expected completion time: 9/5/2026, 4:00PM. Thank you for understanding.</p>
-    </section>
-  </main>
+      .menu a:hover {
+        border-color: var(--line);
+      }
 
-  <footer>
-    © 2026 Studio Stratford | Site under development by <a href="https://scstudios.tech" target="_blank" rel="noopener">SuperCode Studios</a>
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        line-height: 0.98;
+        margin: 0;
+      }
+
+      .hero {
+        margin-top: 0.9rem;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.68);
+        padding: clamp(1.1rem, 3vw, 2.3rem);
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 1rem;
+      }
+
+      .kicker {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.76rem;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin-top: 0.65rem;
+        font-size: clamp(2.5rem, 8vw, 5.4rem);
+      }
+
+      .tagline {
+        margin: 0.9rem 0 0;
+        max-width: 56ch;
+        line-height: 1.7;
+        color: #4d4640;
+      }
+
+      .hero-actions {
+        margin-top: 1.1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.58rem 0.95rem;
+        font-size: 0.88rem;
+        border: 1px solid var(--line);
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .btn.secondary {
+        color: var(--ink);
+        background: #fff;
+      }
+
+      .portrait {
+        overflow: hidden;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        min-height: 220px;
+        background: #f0e7dc;
+      }
+
+      .portrait img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .stack {
+        margin-top: 1rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        padding: clamp(1rem, 2.3vw, 1.45rem);
+        animation: rise 520ms ease both;
+      }
+
+      .panel:nth-child(2) {
+        animation-delay: 120ms;
+      }
+
+      h2 {
+        font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        margin: 0.45rem 0 0;
+        color: var(--muted);
+        line-height: 1.68;
+      }
+
+      .service {
+        padding: 0.7rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .service:first-of-type {
+        border-top: none;
+        padding-top: 0.2rem;
+      }
+
+      .service strong {
+        display: inline-block;
+        min-width: 6.8rem;
+        color: #2f2924;
+      }
+
+      .steps {
+        display: grid;
+        gap: 0.7rem;
+        margin-top: 0.7rem;
+      }
+
+      .step {
+        border-top: 1px solid var(--line);
+        padding-top: 0.6rem;
+      }
+
+      .step:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .quote {
+        margin-top: 0.8rem;
+        font-style: italic;
+        color: #4d4640;
+      }
+
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        margin-top: 1rem;
+        font-size: 0.88rem;
+        color: #706960;
+        text-align: center;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        .two {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          border-radius: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="./logo.png" alt="Studio Stratford logo" />
+          <span>Studio Stratford</span>
+        </div>
+        <nav class="menu" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#insights">Insights</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div>
+          <p class="kicker">Research, writing, editing, and coaching</p>
+          <h1>Clarity, care, and coherence for your ideas, work, and life</h1>
+          <p class="tagline">
+            Studio Stratford is a bespoke service for creative, rigorous, and focused work.
+            Based in Hobart and working globally, Elaine partners with individuals and teams
+            to bring structure, insight, and direction to projects that matter.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Book an introductory call</a>
+            <a class="btn secondary" href="#services">Explore services</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <img src="./portrait.png" alt="Portrait of Elaine Stratford" />
+        </div>
+      </section>
+
+      <section class="stack" id="services">
+        <article class="panel">
+          <h2>Services</h2>
+          <p class="service"><strong>Research</strong> literature reviews, qualitative analysis, archival research, policy reviews.</p>
+          <p class="service"><strong>Writing</strong> developmental support for essays, reports, proposals, and long-form works.</p>
+          <p class="service"><strong>Editing</strong> precision editing that strengthens clarity, coherence, and impact.</p>
+          <p class="service"><strong>Coaching</strong> health and wellbeing, career, and life cycle transitions, underpinned by ICF credentialing and professional insurance.</p>
+        </article>
+
+        <div class="two" id="process">
+          <article class="panel">
+            <h2>How we work</h2>
+            <div class="steps">
+              <div class="step"><h3>1. Scope</h3><p>Define outcomes, constraints, and priorities in a focused discovery conversation.</p></div>
+              <div class="step"><h3>2. Build</h3><p>Develop thinking and materials through practical iteration and high editorial care.</p></div>
+              <div class="step"><h3>3. Deliver</h3><p>Translate work into clear decisions, polished outputs, and confident next actions.</p></div>
+            </div>
+          </article>
+
+          <article class="panel" id="about">
+            <h2>About Elaine</h2>
+            <p>
+              Elaine is a deeply experienced researcher, writer, editor, and coach with decades
+              of professional practice and mentoring. Her work helps clients become incisively
+              expressive, purposeful, and aligned across thinking, practice, and priorities.
+            </p>
+            <p class="quote">"Thoughtful, practical, and quietly transformative support for complex work."</p>
+          </article>
+        </div>
+
+        <div class="two" id="insights">
+          <article class="panel">
+            <h2>Client outcomes</h2>
+            <p>Sharper argumentation in grant proposals and policy documents.</p>
+            <p>Clear project direction across creative and interdisciplinary teams.</p>
+            <p>Stronger confidence and momentum during life and career transitions.</p>
+          </article>
+
+          <article class="panel" id="contact">
+            <h2>Start a conversation</h2>
+            <p class="contact">Email: <a href="mailto:elainestratford@studiostratford.com">elainestratford@studiostratford.com</a></p>
+            <p class="contact">Phone: <a href="tel:+61409956384">+61 409 956 384</a></p>
+            <p>Typical engagements begin with a 30 minute introductory call and a tailored scope.</p>
+            <p class="footer">Based in Hobart, working globally with individuals and teams.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 Studio Stratford. All rights reserved.</p>
+        <p>Website under development by SuperCode Studios | <a href="https://scstudios.tech?utm_source=studiostratford.com" target="_blank">scstudios.tech</a></p>
+    </div>
   </footer>
-</body>
+  </body>
 </html>
