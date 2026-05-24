@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Stratford - Option 1 Editorial Calm</title>
+    <title>Studio Stratford</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -116,7 +116,7 @@
 
       h1 {
         margin-top: 0.65rem;
-        font-size: clamp(2.5rem, 8vw, 5.4rem);
+        font-size: clamp(2.35rem, 7vw, 5rem);
       }
 
       .tagline {
@@ -245,6 +245,35 @@
         color: #4d4640;
       }
 
+      .testimonial-list {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: 0.75rem;
+      }
+
+      .testimonial {
+        margin: 0;
+        padding: 1rem 1rem 0.95rem;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(38, 33, 29, 0.05);
+      }
+
+      .testimonial p {
+        margin: 0;
+        font-style: italic;
+        color: #4d4640;
+      }
+
+      .testimonial cite {
+        display: block;
+        margin-top: 0.6rem;
+        font-style: normal;
+        color: var(--accent);
+        font-size: 0.9rem;
+      }
+
       .contact a {
         color: var(--accent);
         text-decoration: none;
@@ -272,7 +301,12 @@
         }
       }
 
-      @media (max-width: 920px) {
+      @media (max-width: 600px) {
+        h1 {
+          font-size: clamp(1.85rem, 7vw, 2.375rem);
+          max-width: 18ch;
+        }
+
         .hero,
         .two {
           grid-template-columns: 1fr;
@@ -282,6 +316,8 @@
           border-radius: 14px;
         }
       }
+
+      
     </style>
   </head>
   <body>
@@ -303,7 +339,7 @@
       <section class="hero" id="top">
         <div>
           <p class="kicker">Research, writing, editing, and coaching</p>
-          <h1>Clarity, care, and coherence for your ideas, work, and life</h1>
+          <h1>Clarity and care in service of your ideas, work, and life</h1>
           <p class="tagline">
             Studio Stratford is a bespoke service for creative, rigorous, and focused work.
             Based in Hobart and working globally, Elaine partners with individuals and teams
@@ -332,9 +368,10 @@
           <article class="panel">
             <h2>How we work</h2>
             <div class="steps">
-              <div class="step"><h3>1. Scope</h3><p>Define outcomes, constraints, and priorities in a focused discovery conversation.</p></div>
-              <div class="step"><h3>2. Build</h3><p>Develop thinking and materials through practical iteration and high editorial care.</p></div>
-              <div class="step"><h3>3. Deliver</h3><p>Translate work into clear decisions, polished outputs, and confident next actions.</p></div>
+              <div class="step"><h3>1. Scope</h3><p>Mapping your aspirations and ways of working in a focused discovery conversation.</p></div>
+              <div class="step"><h3>2. Connect</h3><p>Collaborating in regular conversations in person or online to turn those aspirations into meaningful, practical actions.</p></div>
+              <div class="step"><h3>3. Refine</h3><p>Assessing actions and refining them to advance your aspirations further.</p></div>
+              <div class="step"><h3>4. Close</h3><p>Reflecting on the journey and its possibilities for long term change in your life.</p></div>
             </div>
           </article>
 
@@ -345,16 +382,41 @@
               of professional practice and mentoring. Her work helps clients become incisively
               expressive, purposeful, and aligned across thinking, practice, and priorities.
             </p>
+            <p>
+              Qualifications: BA (Honours IA) (Flinders), Masters in Tertiary Education
+              Management (Melbourne), PhD (Adelaide), and Certificate IV in Life Coach Practice
+              (LCA). She is also a member of the International Coaching Federation.
+            </p>
+            <p>
+              Elaine carries Professional Indemnity Insurance.
+            </p>
+            <p class="contact">
+              Find Elaine on <a href="https://medium.com/@Elaine.Stratford" target="_blank" rel="noopener noreferrer">Medium</a>,
+              <a href="https://www.linkedin.com/in/elaine-stratford-b333b37/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,
+              <a href="https://www.facebook.com/elaine.stratford1" target="_blank" rel="noopener noreferrer">Facebook</a>, and
+              <a href="https://www.instagram.com/stratfordelaine/" target="_blank" rel="noopener noreferrer">Instagram</a>.
+            </p>
             <p class="quote">"Thoughtful, practical, and quietly transformative support for complex work."</p>
           </article>
         </div>
 
         <div class="two" id="insights">
           <article class="panel">
-            <h2>Client outcomes</h2>
-            <p>Sharper argumentation in grant proposals and policy documents.</p>
-            <p>Clear project direction across creative and interdisciplinary teams.</p>
-            <p>Stronger confidence and momentum during life and career transitions.</p>
+            <h2>What clients say</h2>
+            <div class="testimonial-list">
+              <blockquote class="testimonial">
+                <p>"Thoughtful, practical, and quietly transformative support for complex work."</p>
+                <cite>Academic, New Zealand university</cite>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p>"The modelling you provided made it clear that you had deeply understood the draft and carefully considered how to best fit our hopes and dreams for the grant ... When the team went through and rewrote the work to situate it in existing scholarship, we were able to take those lessons and apply them ourselves ..."</p>
+                <cite>Academic grant writing team, Australian university</cite>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p>"Thank you very much for your editing and mentoring support. I found the sessions highly tailored to my needs and valuable in strengthening my application. I gained several important insights in such a short timeframe that will stay with me well beyond this application process ..."</p>
+                <cite>Academic, Australian university</cite>
+              </blockquote>
+            </div>
           </article>
 
           <article class="panel" id="contact">
